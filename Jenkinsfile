@@ -13,7 +13,8 @@ pipeline {
         stage('build something else') {
           agent any
           steps {
-            echo(getChangedFilesList())
+            List fileList = getChangedFilesList()
+            echo(fileList)
           }
         }
       }

@@ -13,10 +13,15 @@ pipeline {
         stage('build something else') {
           agent any
           steps {
-            sh '''echo building something else'''
+            list = getChangedFilesList()
+            echo list
           }
         }
       }
     }
+  }
+
+  def getChangedFilesList() {
+    return sh(returnStdout: true, script: 'git diff --name-only HEAD^ HEAD')
   }
 }

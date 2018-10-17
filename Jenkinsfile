@@ -20,8 +20,8 @@ pipeline {
       }
     }
   }
+}
 
-  def getChangedFilesList() {
-    return sh(returnStdout: true, script: 'git diff --name-only HEAD^ HEAD')
-  }
+def getChangedFilesList() {
+  return sh(returnStdout: true, script: 'git diff --name-only HEAD^ HEAD')
 }

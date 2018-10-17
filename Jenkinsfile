@@ -12,8 +12,8 @@ pipeline {
         }
         stage('build something else') {
           agent any
+          List fileList = getChangedFilesList()
           steps {
-            List fileList = getChangedFilesList()
             echo(fileList)
           }
         }

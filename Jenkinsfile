@@ -6,7 +6,8 @@ pipeline {
         stage('Build base') {
           agent any
           steps {
-            sh '''#!/bin/bash git diff --name-only HEAD^ HEAD'''
+            sh '''#!/bin/bash
+            git diff --name-only HEAD^ HEAD'''
           }
         }
         stage('build something else') {
